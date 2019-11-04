@@ -1,11 +1,13 @@
 function MakeQuestion(text, op1, op2, op3, op4 ,correctOp){
 	var instance = {};
+
 	instance.text= text;
 	instance.op1 = op1;
 	instance.op2 = op2;
 	instance.op3 = op3;
 	instance.op4 = op4;
 	instance.correctOp = correctOp;
+
 	return instance;
 }
 var q0  = MakeQuestion('how old are u', 4, 52,5, 8, 4)
@@ -30,27 +32,15 @@ function MakeUser(userName, score){
 	instance.score    = 0;
 }
 
-// var c = $('#huey2')
-// 	c.on('change', function(){
-// 	console.log(c.val())
-// })
+var $body = $('body');
 
-// var d = $('#huey3')
-// 	d.on('change', function(){
-// 	console.log(d.val())
-// })	
+var $wrapper = $('<div class = "wrapper"></div>');
 
-var test = $(':checked')[0]
-console.log(test);
+var $qtext = $('<p class="text" ></p>')
 
-
-
-// var r = $('')
-// $("#huey1").on('click',function(){
-// 	$('button').on('click',function(){
-
-// 	})
-// })
-
+var $op1 = $('<input type="radio" id ="inp1"  name="1" value="">')
+var $op2 = $('<input type="radio" id ="inp2"  name="1" value="">')
+var $op3 = $('<input type="radio" id ="inp3"  name="1" value="">')	        
+var $op4 = $('<input type="radio" id ="inp4"  name="1" value="">')
 
 
