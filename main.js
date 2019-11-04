@@ -10,37 +10,38 @@ function MakeQuestion(text, op1, op2, op3, op4 ,correctOp){
 
 	return instance;
 }
-var q0  = MakeQuestion('how old are u', 4, 52,5, 8, 4)
-var q1  = MakeQuestion()
-var q2  = MakeQuestion()
-var q3  = MakeQuestion()
-var q4  = MakeQuestion()
-var q5  = MakeQuestion()
-var q6  = MakeQuestion()
-var q7  = MakeQuestion()
-var q8  = MakeQuestion()
-var q9  = MakeQuestion()
-var q10 = MakeQuestion()
-var q11 = MakeQuestion()
-var q12 = MakeQuestion()
+var q0  = MakeQuestion('In which year did Maradona score a goal with his hand?', 1985, 1986,1987, 1988, 1986)
+var q1  = MakeQuestion('How matches did Mohammed Ali lose in his career?', '1 matche','2 matches','3 matches','4 matches', '1 matche')
+var q2  = MakeQuestion('Which mammal cannot jump?', 'Giraffe','Elephant','Bear','Rhino', 'Elephant')
+var q3  = MakeQuestion("What was Mozart's nationality?", 'Austrian','Hungarian','Croatian','Slovakians','Austrian')
+var q4  = MakeQuestion("What is the largest state of the United States?", 'Montana', 'California', 'Texas', 'Alaska','Alaska')
+var q5  = MakeQuestion("What is the noisiest city in the world?",'Tokyo','Hong Kong', 'New York','Cairo', 'Hong Kong')
+var q6  = MakeQuestion("Who played Wolverine?",    'Hugh Jackman',    'Keanu Reeves',    'Chris Hemsworth', 'Denzel Washington','Hugh Jackman')
+var q7  = MakeQuestion("In what year was Google launched on the web?",1996, 1997, 1998, 1999, 1998)
+var q8  = MakeQuestion("What does USB stand for in the computer world?", 'Unit Seriel Bus','Universal Semi Bus', 'Unit Serial Bus','Universal Serial Bus','Universal Serial Bus')
+var q9  = MakeQuestion("How many eyes does a honeybee have?","One", "Two", "Four", "Five","Five")
+var q10 = MakeQuestion("Which planet is nearest the sun?",'Venus','Mercury','Earth','Mars','Mercury')
+var q11 = MakeQuestion("What is the largest spider in the world?",'Camel Spider','Goliath birdeater','Giant Huntsman','Hercules Baboon','Goliath birdeater')
+var q12 = MakeQuestion("Where did tomatoes originate from?","Brazil","India","Japan","America","America")
 
 var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
-
-function MakeUser(userName, score){
-	var instance = {};
-	instance.userName = userName;
-	instance.score    = 0;
-}
 
 var $body = $('body');
 
 var $wrapper = $('<div class = "wrapper"></div>');
+var $qtext = $('<p class="text" ></p>');
+var $op1 = $('<input type="radio" id ="inp1"  name="1" value="ttttt">');
+var $lab1 = $('<p for="inp1"></p>');
+var $op2 = $('<input type="radio" id ="inp2"  name="1" value="">');
+var $lab2 = $('<label for="inp2">Huey1</label>');
+var $op3 = $('<input type="radio" id ="inp3"  name="1" value="">');
+var $lab3 = $('<label for="inp3">Huey1</label>');	        
+var $op4 = $('<input type="radio" id ="inp4"  name="1" value="">');
+var $lab4 = $('<label for="inp1">Huey4</label>');
 
-var $qtext = $('<p class="text" ></p>')
+$qtext.appendTo($wrapper);
+$op1.appendTo($wrapper);
+$wrapper.appendTo($body);
+$qtext.text(questions[0].text);
 
-var $op1 = $('<input type="radio" id ="inp1"  name="1" value="">')
-var $op2 = $('<input type="radio" id ="inp2"  name="1" value="">')
-var $op3 = $('<input type="radio" id ="inp3"  name="1" value="">')	        
-var $op4 = $('<input type="radio" id ="inp4"  name="1" value="">')
-
-
+ 
