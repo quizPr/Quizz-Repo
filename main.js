@@ -31,7 +31,7 @@ var $body = $('body');
 var $wrapper = $('<div class = "wrapper"></div>');
 var $qtext = $('<p class="text" ></p>');
 var $op1 = $('<input type="radio" id ="inp1"  name="1" value="ttttt">');
-var $lab1 = $('<p for="inp1"></p>');
+var $lab1 = $('<label for="inp1"> </label>');
 var $op2 = $('<input type="radio" id ="inp2"  name="1" value="">');
 var $lab2 = $('<label for="inp2">Huey1</label>');
 var $op3 = $('<input type="radio" id ="inp3"  name="1" value="">');
@@ -40,8 +40,15 @@ var $op4 = $('<input type="radio" id ="inp4"  name="1" value="">');
 var $lab4 = $('<label for="inp1">Huey4</label>');
 
 $qtext.appendTo($wrapper);
-$op1.appendTo($wrapper);
+
 $wrapper.appendTo($body);
 $qtext.text(questions[0].text);
-
- 
+$wrapper.append($op1, $lab1, $op2, $lab2, $op3, $lab3, $op4, $lab4);
+$lab1.text(questions[0].op1);
+// ($lab1).appendTo($wrapper);
+$lab2.text(questions[0].op2);
+// ($lab2).appendTo($wrapper);
+$lab3.text(questions[0].op3);
+// ($lab3).appendTo($wrapper);
+$lab4.text(questions[0].op4);
+// ($lab4).appendTo($wrapper);
