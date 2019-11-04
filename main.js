@@ -24,11 +24,33 @@ var q12 = MakeQuestion()
 
 var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
 
-$('#bt1').on('click',function () {
-	$('#q1').toggle("slow")
-	// body...
-})
-$('#bt2').on('click',function () {
-	$('#q1').show("slow")
-	// body...
-})
+function MakeUser(userName, score){
+	var instance = {};
+	instance.userName = userName;
+	instance.score    = 0;
+}
+
+// var c = $('#huey2')
+// 	c.on('change', function(){
+// 	console.log(c.val())
+// })
+
+// var d = $('#huey3')
+// 	d.on('change', function(){
+// 	console.log(d.val())
+// })	
+
+var test = $(':checked')[0]
+console.log(test);
+
+
+
+// var r = $('')
+// $("#huey1").on('click',function(){
+// 	$('button').on('click',function(){
+
+// 	})
+// })
+
+
+
