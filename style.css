@@ -1,0 +1,10 @@
+body {
+	background: #8CFBDE;
+}
+
+.wrapper {
+    border: 1px solid red;
+    margin: 5% auto;
+    padding: 5px;
+}
+
