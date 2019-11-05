@@ -1,7 +1,5 @@
 body {
 	background-image: url('https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-	display: flex;
-	flex-direction: column; 
 }
 
 .wrapper {
@@ -49,3 +47,7 @@ input{
 	margin-left: 8%;
 }
 
+section {
+	display: flex;
+	flex-direction: column; 
+}
