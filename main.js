@@ -12,18 +12,19 @@ function MakeQuestion(text, op1, op2, op3, op4 ,correctOp){
 };
 
 var q0  = MakeQuestion('In which year did Maradona score a goal with his hand?', '1985', '1986', '1987', '1988', '1986');
-var q1  = MakeQuestion('How matches did Mohammed Ali lose in his career?', '1', '2', '3', '4', '1');
+var q1  = MakeQuestion('How matches did Mohammed Ali lose in his career?', 'Four', 'Three', 'Five', 'One', 'Five');
 var q2  = MakeQuestion('Which mammal cannot jump?', 'Giraffe','Elephant','Bear','Rhino', 'Elephant');
 var q3  = MakeQuestion("What was Mozart's nationality?", 'Austrian','Hungarian','Croatian','Slovakians','Austrian');
 var q4  = MakeQuestion("What is the largest state of the United States?", 'Montana', 'California', 'Texas', 'Alaska','Alaska');
-var q5  = MakeQuestion("What is the noisiest city in the world?",'Tokyo','Hong Kong', 'New York','Cairo', 'Hong Kong');
+var q5  = MakeQuestion("What is the noisiest city in the world?",'Tokyo','Hong-Kong', 'New York','Cairo', 'Hong-Kong');
 var q6  = MakeQuestion("Who played Wolverine?",    'Hugh Jackman',    'Keanu Reeves',    'Chris Hemsworth', 'Denzel Washington','Hugh Jackman');
 var q7  = MakeQuestion("In what year was Google launched on the web?",'1996', '1997', '1998', '1999', '1998');
-var q8  = MakeQuestion("What does USB stand for in the computer world?", 'Unit Seriel Bus','Universal Semi Bus', 'Unit Serial Bus','Universal Serial Bus','Universal Serial Bus');
+var q8  = MakeQuestion("How many NBA Championships did Michael Jordan win?", 'Five','Six', 'Seven','None','Six');
 var q9  = MakeQuestion("How many eyes does a honeybee have?","One", "Two", "Four", "Five","Five");
 var q10 = MakeQuestion("Which planet is nearest the sun?",'Venus','Mercury','Earth','Mars','Mercury');
 var q11 = MakeQuestion("What is the largest spider in the world?",'Camel Spider','Goliath birdeater','Giant Huntsman','Hercules Baboon','Goliath birdeater');
 var q12 = MakeQuestion("Where did tomatoes originate from?","Brazil","India","Japan","America","America");
+var q13 = MakeQuestion('What company develops the Rock Band series of rhythm games?', 'Dice', 'Activision', 'Epic', ' Ubisoft', 'Activision')
 
 var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
 
@@ -41,10 +42,12 @@ function appender(i){
 		var $lab3 = $('<label for="inp3"></label>');	        
 		var $op4 = $('<input type="radio" class ="inp4"  name= '+ i + ' value='+ questions[i].op4 + ' >');
 		var $lab4 = $('<label for="inp1"></label>');
+		var $span = $('<span class ="sp"></span>')
+		$span.append($op1, $lab1, $op2, $lab2, $op3, $lab3, $op4, $lab4);
 		$qtext.appendTo($wrapper);
 		$wrapper.appendTo($section);
 		$qtext.text(questions[i].text);
-		$wrapper.append($op1, $lab1, $op2, $lab2, $op3, $lab3, $op4, $lab4);
+		$wrapper.append($span);
 		$lab1.text(questions[i].op1);
 		$lab2.text(questions[i].op2);
 		$lab3.text(questions[i].op3);

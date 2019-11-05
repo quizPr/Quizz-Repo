@@ -46,7 +46,8 @@ input{
 	text-align: center;
 	font-size: 1.3em;
 	cursor: pointer;
-	margin-left: 8%;
+	margin: auto 15px;
+	border: 1px solid red;
 }
 
 section {
@@ -62,3 +63,16 @@ section {
 	font-size: 1.7em;
 	color: #979799;
 }
+
+.sp {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+
+
+
+
+
