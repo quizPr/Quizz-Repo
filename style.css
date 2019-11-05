@@ -53,3 +53,12 @@ section {
 	display: flex;
 	flex-direction: column; 
 }
+
+#score{
+	border: 1px solid #979799;
+	width: 30%;
+	height: 50px;
+	text-align: center;
+	font-size: 1.7em;
+	color: #979799;
+}

@@ -26,7 +26,7 @@ var q11 = MakeQuestion("What is the largest spider in the world?",'Camel Spider'
 var q12 = MakeQuestion("Where did tomatoes originate from?","Brazil","India","Japan","America","America");
 
 var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
-let score = 0;
+
 var $body = $('body');
 var $section = $('section');
 
@@ -63,9 +63,12 @@ appender(a);
 appender(d);
 
 var $submit = $('<button id = "submit" type="submit"> Submit </button>')
-//var $fresh = $('<button id = "submit" type="submit" onclick="refresh()"> Refresh </button>')
+//var $fresh = $('<button id = "fresh"  onclick="refresh()"> Give Up </button>')
 $submit.appendTo($body);
+// $fresh.appendTo($body);
+// $('#fresh').on('click',function (){
 
+// })
 
 var choices1 = [];
 var choices2 = [];
@@ -114,26 +117,35 @@ checkQuestion(d, choices4)
 // console.log(choices2);
 // console.log(choices3);
 // console.log(choices4);
+	var score = 0;
+function CalculateScore(){
+	
+	if(choices1[choices1.length - 1] === questions[c].correctOp.toString()){
+		score += 25;
+	};
+	if(choices2[choices2.length - 1] === questions[b].correctOp.toString()){
+		score += 25;
+	};
+	if(choices3[choices3.length - 1] === questions[a].correctOp.toString()){
+	  score += 25;
+	}; 
+	if(choices4[choices4.length - 1] === questions[d].correctOp.toString()){
+		score += 25;
+	};
+	console.log(score);
+	  $('#score').text('Your score is ' + score);
+	return score;
 
+}
+console.log(score);
+	var $score = $('#score');
 
-var $score = $('<span id="score"> </span>')
 
 $('#submit').one('click', function(){
 	CalculateScore();
+	$score.appendTo($('body'));
 })
 
-function CalculateScore(){
-	var result = score;
-	if(choices1[choices1.length - 1] === questions[c].correctOp.toString()){
-		result += 25;
-	} if(choices2[choices2.length - 1] === questions[b].correctOp.toString()){
-		result += 25;
-	} if(choices3[choices3.length - 1] === questions[a].correctOp.toString()){
-		result += 25;
-	} if(choices4[choices4.length - 1] === questions[d].correctOp.toString()){
-		result += 25;
-	}
-	console.log(result);
-	return result; 
-}
+
+
 
