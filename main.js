@@ -26,9 +26,10 @@ var q11 = MakeQuestion("What is the largest spider in the world?",'Camel Spider'
 var q12 = MakeQuestion("Where did tomatoes originate from?","Brazil","India","Japan","America","America");
 
 var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
-var score = 0;
+let score = 0;
 var $body = $('body');
 var $section = $('section');
+
 function appender(i){
 		var $wrapper = $('<div class = "wrapper " id ="' + i + '""></div>');
 		var $qtext = $('<p class="text" ></p>');
@@ -61,57 +62,78 @@ appender(b);
 appender(a);
 appender(d);
 
-var $submit = $('<button id = "submit" type="submit" onclick="check()"> Submit </button>')
-var $fresh = $('<button id = "submit" type="submit" onclick="refresh()"> Refresh </button>')
+var $submit = $('<button id = "submit" type="submit"> Submit </button>')
+//var $fresh = $('<button id = "submit" type="submit" onclick="refresh()"> Refresh </button>')
 $submit.appendTo($body);
 
 
+var choices1 = [];
+var choices2 = [];
+var choices3 = [];
+var choices4 = [];
 
-function checkQuestion(a){
-	 $('#'+a+' .inp1').on('click',function(){
+function checkQuestion(a, array){
+
+	 $('#'+a+' .inp1').one('click',function(){
  		var choice = $('#'+a+' .inp1').val();
  		choice = choice.toString()
  		var sol = questions[a].correctOp.toString();
  		console.log(sol, choice);
- 		if(sol === choice){
- 			score += 10;
- 			console.log(score);
- 			};
+ 		array.push(choice);
  		});
-	 	$('#'+a+' .inp2').on('click',function(){
+	 	$('#'+a+' .inp2').one('click',function(){
  		var choice = $('#'+a+' .inp2').val();
  		choice = choice.toString()
  		var sol = questions[a].correctOp.toString();
  		console.log(sol, choice);
- 		if(sol === choice){
- 			score += 10;
- 			console.log(score);
- 			};
+ 		array.push(choice);
+ 		
  		});
- 		$('#'+a+' .inp3').on('click',function(){
+ 		$('#'+a+' .inp3').one('click',function(){
  		var choice = $('#'+a+' .inp3').val();
  		choice = choice.toString()
  		var sol = questions[a].correctOp.toString();
  		console.log(sol, choice);
- 		if(sol === choice){
- 			score += 10;
- 			console.log(score);
- 			};
+ 		array.push(choice);
+ 		
  		});
- 		$('#'+a+' .inp4').on('click',function(){
+ 		$('#'+a+' .inp4').one('click',function(){
  		var choice = $('#'+a+' .inp4').val();
  		choice = choice.toString()
  		var sol = questions[a].correctOp.toString();
  		console.log(sol, choice);
- 		if(sol === choice){
- 			score += 10;
- 			console.log(score);
- 			};
+ 		array.push(choice);
  		});
- 		return score; 
+ 		return array; 
 	}
+checkQuestion(c, choices1)
+checkQuestion(b, choices2)
+checkQuestion(a, choices3)
+checkQuestion(d, choices4)
+// console.log(choices1);
+// console.log(choices2);
+// console.log(choices3);
+// console.log(choices4);
 
-checkQuestion(a);
-checkQuestion(b);
-checkQuestion(c);
-checkQuestion(d);
+
+var $score = $('<span id="score"> </span>')
+
+$('#submit').one('click', function(){
+	CalculateScore();
+})
+
+function CalculateScore(){
+	var result = score;
+	if(choices1[choices1.length - 1] === questions[c].correctOp.toString()){
+		result += 25;
+	} if(choices2[choices2.length - 1] === questions[b].correctOp.toString()){
+		result += 25;
+	} if(choices3[choices3.length - 1] === questions[a].correctOp.toString()){
+		result += 25;
+	} if(choices4[choices4.length - 1] === questions[d].correctOp.toString()){
+		result += 25;
+	}
+	console.log(result);
+	return result; 
+}
+
