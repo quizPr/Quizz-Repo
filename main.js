@@ -17,16 +17,21 @@ var q2  = MakeQuestion('Which mammal cannot jump?', 'Giraffe','Elephant','Bear',
 var q3  = MakeQuestion("What was Mozart's nationality?", 'Austrian','Hungarian','Croatian','Slovakians','Austrian');
 var q4  = MakeQuestion("What is the largest state of the United States?", 'Montana', 'California', 'Texas', 'Alaska','Alaska');
 var q5  = MakeQuestion("What is the noisiest city in the world?",'Tokyo','Hong-Kong', 'New York','Cairo', 'Hong-Kong');
-var q6  = MakeQuestion("Who played Wolverine?",    'Hugh Jackman',    'Keanu Reeves',    'Chris Hemsworth', 'Denzel Washington','Hugh Jackman');
+var q6  = MakeQuestion("The actor who played Wolverine is Hugh ...", 'Kidmann' , "Jackman", 'Norton', 'Washington', "Jackman");
 var q7  = MakeQuestion("In what year was Google launched on the web?",'1996', '1997', '1998', '1999', '1998');
 var q8  = MakeQuestion("How many NBA Championships did Michael Jordan win?", 'Five','Six', 'Seven','None','Six');
 var q9  = MakeQuestion("How many eyes does a honeybee have?","One", "Two", "Four", "Five","Five");
 var q10 = MakeQuestion("Which planet is nearest the sun?",'Venus','Mercury','Earth','Mars','Mercury');
-var q11 = MakeQuestion("What is the largest spider in the world?",'Camel Spider','Goliath birdeater','Giant Huntsman','Hercules Baboon','Goliath birdeater');
+var q11 = MakeQuestion("In which series played Jennifer Aniston and Brad Pitt together ?",'Lost','See','Dexter','Friends','Friends');
 var q12 = MakeQuestion("Where did tomatoes originate from?","Brazil","India","Japan","America","America");
-var q13 = MakeQuestion('What company develops the Rock Band series of rhythm games?', 'Dice', 'Activision', 'Epic', ' Ubisoft', 'Activision')
+var q13 = MakeQuestion('What company develops the Rock Band series of rhythm games?', 'Dice', 'Activision', 'Epic', ' Ubisoft', 'Activision');
+var q14 = MakeQuestion("In which country happened the Orange Revolution between 2004-2005?", "Hungary", "France", "Spain", "Ukraine", "Ukraine");
+var q15 = MakeQuestion("Where was built the first subway?", "London", "New York", "Philadelphia", "Moscow", "London");
+var q16 = MakeQuestion("Which fruit tree is considered to be sacred in India?", "Apple", "Banane", "Kiwi", "Mango", "Mango");
+var q17 = MakeQuestion("In which city did Romeo and Julia live?", "Poiano", "Verona", "Rizza", "Sona", "Verona");
 
-var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
+
+var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17];
 
 var $body = $('body');
 var $section = $('section');
@@ -55,10 +60,10 @@ function appender(i){
 }
 
 
-var a = Math.floor(Math.random() * 4);
-var b = Math.floor(4 + Math.random() * 4);
-var c = Math.floor(7 + Math.random() * 4);
-var d = Math.floor(9 + Math.random() * 4)
+var a = Math.floor(Math.random() * 5);
+var b = Math.floor(5 + Math.random() * 4);
+var c = Math.floor(10 + Math.random() * 4);
+var d = Math.floor(14 + Math.random() * 4)
 
 appender(c);
 appender(b);
