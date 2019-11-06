@@ -1,29 +1,47 @@
 body {
-	background-image: url('https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+	background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+	background-repeat: repeat;
+    background-size: 100%;
 }
 
 .wrapper {
     border: 1px solid #979799;
-    margin: 5% auto;
+    margin: 75px auto;
     padding: 5px;
     background: #F8F7FB;
     opacity: 0.75;
     width: 55%;
     height: 100px;
     border-radius: 30px 30px;
+    box-shadow: 5px 5px 5px #888;
    }
 
 #submit {
-	border-radius: 30px 0px;
-	cursor: pointer;
-	color : green;
+  cursor: pointer;
+  color : #FEFEFE;
+  height: 35px;
+  width: 120px;
+  text-align: center;
+  border-radius: 10px 10px solid;
+  background-color: white;
+  font-size: 25px;
+  font-family: 'Bitter', serif;
+  position: relative;
+  border-radius: 0px 10%;
+ background: teal;
+ box-shadow: 5px 5px 5px #888;
+ justify-content: center;
+ align-items: center;
+ margin: 20px auto;
 }
 
 #h1{
 	text-align: center;
-	font-size: 2.5em;
-	font-family: 'Open Sans', sans-serif;
+	font-size: 60px;
+	font-family: 'Dancing Script', cursive;
 	color:#FFFEFD;
+	font-weight:35px;
+	margin-bottom: 2.5%;
 }
 
 .text{
@@ -56,13 +74,14 @@ section {
 }
 
 #score{
-	border: 1px solid #979799;
 	width: 30%;
 	height: 50px;
 	text-align: center;
-	font-size: 1.7em;
-	color: #979799;
+	font-size: 1.9em;
+	color:#FEFEFE;
 	margin: 50px auto;
+	position: relative;
+    font-family: 'Lakki Reddy', cursive;
 }
 
 .sp {
@@ -71,7 +90,10 @@ section {
 	justify-content: center;
 }
 
-
+#submitter {
+	display: flex;
+	flex-direction: column;
+}
 
 
 
