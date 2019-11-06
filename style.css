@@ -1,21 +1,24 @@
 body {
-	background-image: url('https://images.unsplash.com/photo-1540835296355-c04f7a063cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+	background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+	background-repeat: repeat;
+    background-size: 100%;
 }
 
 .wrapper {
     border: 1px solid #979799;
-    margin: 5% auto;
+    margin: 75px auto;
     padding: 5px;
     background: #F8F7FB;
     opacity: 0.75;
     width: 55%;
     height: 100px;
     border-radius: 30px 30px;
+    box-shadow: 5px 5px 5px #888;
    }
 
 #submit {
   cursor: pointer;
-  color : #F5FAFF;
+  color : #FEFEFE;
   height: 35px;
   width: 120px;
   text-align: center;
@@ -75,9 +78,10 @@ section {
 	height: 50px;
 	text-align: center;
 	font-size: 1.9em;
-	color:#C0CAD1;
+	color:#FEFEFE;
 	margin: 50px auto;
 	position: relative;
+    font-family: 'Lakki Reddy', cursive;
 }
 
 .sp {

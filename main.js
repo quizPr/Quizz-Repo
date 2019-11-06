@@ -68,8 +68,9 @@ $( document ).ready(function() {
 	var a = Math.floor(Math.random() * 5);
 	var b = Math.floor(5 + Math.random() * 4);
 	var c = Math.floor(10 + Math.random() * 4);
-	var d = Math.floor(14 + Math.random() * 4)
+	var d = Math.floor(14 + Math.random() * 4);
 
+	
 	appender(c);
 	appender(b);
 	appender(a);
@@ -140,6 +141,7 @@ $( document ).ready(function() {
 
 	};
 
+	
 	var $score = $('#score');
 
 	var $submit = $('#submit');
@@ -150,6 +152,8 @@ $( document ).ready(function() {
 		$score.appendTo($('#submitter'));
 	}) 
 });
+
+
 
 
 
