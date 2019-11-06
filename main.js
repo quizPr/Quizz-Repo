@@ -1,3 +1,5 @@
+
+//function creates questions
 function MakeQuestion(text, op1, op2, op3, op4 ,correctOp){
 	var instance = {};
 
@@ -36,27 +38,29 @@ var questions = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14
 var $body = $('body');
 var $section = $('section');
 
+//appending the questions
 function appender(i){
-		var $wrapper = $('<div class = "wrapper " id ="' + i + '""></div>');
-		var $qtext = $('<p class="text" ></p>');
-		var $op1 = $('<input type="radio" class ="inp1"  name=' + i +' value= '+ questions[i].op1 + ' >');
-		var $lab1 = $('<label for="inp1"></label>');
-		var $op2 = $('<input type="radio" class ="inp2"  name= '+ i + ' value='+ questions[i].op2 + ' >');
-		var $lab2 = $('<label for="inp2"></label>');
-		var $op3 = $('<input type="radio" class ="inp3"  name= '+ i + ' value='+ questions[i].op3+ ' >');
-		var $lab3 = $('<label for="inp3"></label>');	        
-		var $op4 = $('<input type="radio" class ="inp4"  name= '+ i + ' value='+ questions[i].op4 + ' >');
-		var $lab4 = $('<label for="inp1"></label>');
-		var $span = $('<span class ="sp"></span>')
-		$span.append($op1, $lab1, $op2, $lab2, $op3, $lab3, $op4, $lab4);
-		$qtext.appendTo($wrapper);
-		$wrapper.appendTo($section);
-		$qtext.text(questions[i].text);
-		$wrapper.append($span);
-		$lab1.text(questions[i].op1);
-		$lab2.text(questions[i].op2);
-		$lab3.text(questions[i].op3);
-		$lab4.text(questions[i].op4);	  
+	var $wrapper = $('<div class = "wrapper " id ="' + i + '""></div>');
+	var $qtext = $('<p class="text" ></p>');
+	var $op1 = $('<input type="radio" class ="inp1"  name=' + i +' value= '+ questions[i].op1 + ' >');
+	var $lab1 = $('<label for="inp1"></label>');
+	var $op2 = $('<input type="radio" class ="inp2"  name= '+ i + ' value='+ questions[i].op2 + ' >');
+	var $lab2 = $('<label for="inp2"></label>');
+	var $op3 = $('<input type="radio" class ="inp3"  name= '+ i + ' value='+ questions[i].op3+ ' >');
+	var $lab3 = $('<label for="inp3"></label>');	        
+	var $op4 = $('<input type="radio" class ="inp4"  name= '+ i + ' value='+ questions[i].op4 + ' >');
+	var $lab4 = $('<label for="inp1"></label>');
+	var $span = $('<span class ="sp"></span>');
+
+	$span.append($op1, $lab1, $op2, $lab2, $op3, $lab3, $op4, $lab4);
+	$qtext.appendTo($wrapper);
+	$wrapper.appendTo($section);
+	$qtext.text(questions[i].text);
+	$wrapper.append($span);
+	$lab1.text(questions[i].op1);
+	$lab2.text(questions[i].op2);
+	$lab3.text(questions[i].op3);
+	$lab4.text(questions[i].op4);	  
 }
 
 
@@ -70,64 +74,53 @@ appender(b);
 appender(a);
 appender(d);
 
-var $submit = $('<button id = "submit" type="submit"> Submit </button>')
-//var $fresh = $('<button id = "fresh"  onclick="refresh()"> Give Up </button>')
-$submit.appendTo($body);
-// $fresh.appendTo($body);
-// $('#fresh').on('click',function (){
 
-// })
-
+// if the user changes his option before submitting we need to take the last option
+//every option is stored in a array choice n 
 var choices1 = [];
 var choices2 = [];
 var choices3 = [];
 var choices4 = [];
 
-function checkQuestion(a, array){
+// storeChoice store every choice in the array
+function storeChoices(a, array){
 
-	 $('#'+a+' .inp1').one('click',function(){
- 		var choice = $('#'+a+' .inp1').val();
- 		choice = choice.toString()
- 		var sol = questions[a].correctOp.toString();
- 		console.log(sol, choice);
- 		array.push(choice);
- 		});
-	 	$('#'+a+' .inp2').one('click',function(){
- 		var choice = $('#'+a+' .inp2').val();
- 		choice = choice.toString()
- 		var sol = questions[a].correctOp.toString();
- 		console.log(sol, choice);
- 		array.push(choice);
- 		
- 		});
- 		$('#'+a+' .inp3').one('click',function(){
- 		var choice = $('#'+a+' .inp3').val();
- 		choice = choice.toString()
- 		var sol = questions[a].correctOp.toString();
- 		console.log(sol, choice);
- 		array.push(choice);
- 		
- 		});
- 		$('#'+a+' .inp4').one('click',function(){
- 		var choice = $('#'+a+' .inp4').val();
- 		choice = choice.toString()
- 		var sol = questions[a].correctOp.toString();
- 		console.log(sol, choice);
- 		array.push(choice);
- 		});
+ $('#'+a+' .inp1').one('click',function(){
+		var choice = $('#'+a+' .inp1').val();
+		choice = choice.toString()
+		var sol = questions[a].correctOp.toString();
+		array.push(choice);
+		});
+ 	$('#'+a+' .inp2').one('click',function(){
+		var choice = $('#'+a+' .inp2').val();
+		choice = choice.toString()
+		var sol = questions[a].correctOp.toString();
+		array.push(choice);
+		
+		});
+		$('#'+a+' .inp3').one('click',function(){
+		var choice = $('#'+a+' .inp3').val();
+		choice = choice.toString()
+		var sol = questions[a].correctOp.toString();
+		array.push(choice);
+		});
+		$('#'+a+' .inp4').one('click',function(){
+		var choice = $('#'+a+' .inp4').val();
+		choice = choice.toString()
+		var sol = questions[a].correctOp.toString();
+		array.push(choice);
+		});
  		return array; 
 	}
-checkQuestion(c, choices1)
-checkQuestion(b, choices2)
-checkQuestion(a, choices3)
-checkQuestion(d, choices4)
-// console.log(choices1);
-// console.log(choices2);
-// console.log(choices3);
-// console.log(choices4);
-	var score = 0;
+storeChoices(c, choices1);
+storeChoices(b, choices2);
+storeChoices(a, choices3);
+storeChoices(d, choices4);
+
+//calculate score compare the last choice before submit and the correct answer and update score
+
 function CalculateScore(){
-	
+	var score = 0;
 	if(choices1[choices1.length - 1] === questions[c].correctOp.toString()){
 		score += 25;
 	};
@@ -144,10 +137,12 @@ function CalculateScore(){
 	  $('#score').text('Your score is ' + score);
 	return score;
 
-}
-console.log(score);
-	var $score = $('#score');
+};
 
+var $score = $('#score');
+
+var $submit = $('<button id = "submit" type="submit"> Submit </button>');
+$submit.appendTo($body);
 
 $('#submit').one('click', function(){
 	CalculateScore();
